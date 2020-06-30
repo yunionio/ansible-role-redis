@@ -1,0 +1,13 @@
+---
+dependencies: [davidwittman.redis]
+
+galaxy_info:
+  role_name: redis
+  author: rainzm
+  description: Redis CI
+  company: "Yunion, Beijing"
+  license: "license (Apache)"
+  min_ansible_version: 2.4
+  galaxy_tags:
+    - redis
+
