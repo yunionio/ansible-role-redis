@@ -1,7 +1,13 @@
-- name: configure the redis server
-  vars:
-    - redis_slaveof: {{ redis_master_hostname }} {{ redis_port }}
-  roles:
-    - davidwittman.redis
+---
+- name: configure the redis master server
+  include_role:
+    name: davidwittman.redis
+  when: not redis_slave
 
+- name: configure the redis slave server
+  vars:
+    - redis_slaveof: "{{ redis_master_hostname }} {{ redis_port }}"
+  include_role:
+    name: davidwittman.redis
+  when: redis_slave
 
