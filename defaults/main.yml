@@ -1,6 +1,6 @@
 ---
 
-redis_slave: false
+redis_slave: "false"
 redis_master_hostname: 
 redis_port: 6379
 
